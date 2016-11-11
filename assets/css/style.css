@@ -12,7 +12,7 @@ body {
 h3 {
 	font-size: 18px;
 	padding: 0 18%;
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 }
 
 .box {
@@ -23,11 +23,6 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-}
-
-h4 {
-	letter-spacing: 2px;
- 	font-weight: lighter;
 }
 
  /* ------ Navigation ------ */
@@ -54,13 +49,22 @@ nav ul li a {
 	display: block;
 	text-decoration: none;
 }
+nav ul li a:hover {
+	background-color: #e09457;
+}
 
 nav ul li:nth-last-child(2) { 
 	float:right; 
 	background-color: #e09457;
 }
+nav ul li:nth-last-child(2) a:hover { 
+	background-color: #3a3a3a;
+	color: #fafafa;
+}
 nav ul li.icon{ 
 	display: none;
+	transition: all 400ms ease;
+	background-color: #e09457;
 }
 
  /* ------ Header ------ */
@@ -137,10 +141,6 @@ nav ul li.icon{
 
 #features img {
 	width: 100%;
-}
-
-#features h4 {
-	margin:25px 0 0 0;
 }
 
 #features p {
@@ -284,6 +284,9 @@ footer h5 {
 		    display: block;
 		    text-align: left;
 		}
+		nav ul.burgermenu li a:hover {
+		    background-color: #e09457;
+		}
 
     }
    
@@ -294,5 +297,6 @@ footer h5 {
 
     /* Large Devices, Wide Screens */
     @media only screen and (min-width : 1200px) {
+    	
 
     }
