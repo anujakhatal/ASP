@@ -4,14 +4,15 @@ body {
 	color: #333;
 }
 /* ------ Comman Useful Classes ------ */
-
+section:not(:first-child) {
+	padding: 15px;
+}
 .uppercase {
 	text-transform: uppercase;
 }
 
 h3 {
-	font-size: 18px;
-	padding: 0 18%;
+	font-size: 16px;
 	letter-spacing: 2px;
 }
 
@@ -71,40 +72,37 @@ nav ul li.icon{
 
  header {
  	background: url('../images/backgroundVinyl.jpg') no-repeat center center;
- 	height: 400px;
+ 	height: 150px;
 	position: relative;
 	background-size: cover;
 	text-align: center;
-	padding: 50px;
-	opacity: 0.85;
+	padding: 25px;
+	opacity: 0.90;
 	margin-top: 52px;
 }
 
  header h1 {
 
  	color: #fff;
- 	font-size: 45px;
- 	margin-top: 60px;
- 	padding:0 30% ;
+ 	font-size: 25px;
+ 	margin-top: 25px;
  	text-align: center;
  	letter-spacing: 5px;
 }
 
  header img {
- 	width: 300px;
+ 	width: 250px;
 }
 
 /* ------ SECTION-COPY ------ */
 
 #copy {
-	padding: 45px;
 	text-align: center;
-	width: 60%;
 	margin: 0 auto;
 }
 
 #copy hr {
-	width: 5%;
+	width: 15%;
 	height: 2px;
 	color: #e09457;
 	border: none;
@@ -113,38 +111,27 @@ nav ul li.icon{
 
 #copy p {
 	letter-spacing: 1px;
-	margin-top: 40px;
+	margin-top: 25px;
 }
 
 /* ------ SECTION-FEATURES; ------ */
 
 #features {
 	text-align: center;
-    width: 80%;
-    padding: 0 10%;
+    padding: 0 15px;
     float: left;
 }
-
-#features [class ^= 'column-'] {
-    width: 33.3333%;
-    display: inline-block;
-    text-align: center;
+#features article {
+	padding-bottom: 40px;
 }
 
-#features .column-1 {
-    float: left;
-}
-
-#features .column-2 {
-    float: right;
-}
 
 #features img {
 	width: 100%;
 }
 
 #features p {
-	margin: 25px 0;
+	margin-top: -5px;
 }
 
 #features a {
@@ -155,7 +142,6 @@ nav ul li.icon{
     text-decoration: none;
     display: inline-block;
     font-size: 12px;
-    margin-top: 5px;
     color: #333;
 }
 
@@ -169,43 +155,23 @@ nav ul li.icon{
 /* ------ SECTION-SPONSORS; ------ */
 
 #sponsors {
-	margin-top: 100px;
+	margin-top: 25px;
 	clear: both;
-	float: left;
 	text-align: center;
-	width: 80%;
-    padding: 0 10%;
-    font-weight: lighter;
 }
 
 #sponsors img {
-	width: 90%;
-	margin-top: 45px;
+	width: 100%;
+	margin-top: 15px;
 }
 
 /* ------ FOOTER ------ */
 footer {
 	color: #fafafa;
-    width: 80%;
-    padding: 0 10%;
+    width: 100%;
     float: left;
     background-color: #3a3a3a;
-    margin-top: 100px;
-}
-
-footer [class ^= 'footer-'] {
-    width: 33.3333%;
-    display: inline-block;
-    float: left;
-    padding-top: 45px;
-}
-
-footer .footer-left {
-    float: left;
-}
-
-footer .footer-right {
-    float: right;
+    margin-top: 60px;
 }
 
 
@@ -292,11 +258,43 @@ footer h5 {
    
     /* Medium Devices, Desktops */
     @media only screen and (min-width : 992px) {
+    	/* ------ FEATURES ------ */
+
+    	#features [class ^= 'column-'] {
+		    width: 33.3333%;
+		    display: inline-block;
+		    text-align: center;
+		}
+
+		#features .column-1 {
+		    float: left;
+		}
+
+		#features .column-2 {
+		    float: right;
+		}
+
+		/* ------ FOOTER ------ */
+
+		footer [class ^= 'footer-'] {
+		    width: 33.3333%;
+		    display: inline-block;
+		    float: left;
+		    padding-top: 45px;
+		}
+
+		footer .footer-left {
+		    float: left;
+		}
+
+		footer .footer-right {
+		    float: right;
+		}
 
     }
 
     /* Large Devices, Wide Screens */
     @media only screen and (min-width : 1200px) {
-    	
+
 
     }
