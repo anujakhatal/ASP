@@ -26,7 +26,35 @@ ul {
     padding: 0;
 }
 
- /* ------ Navigation ------ */
+/* ------------ Navigation ------------ */
+
+/* --- Display Burger Menu --- */
+
+nav ul li:not(:first-child) {
+	display: none;
+}
+nav ul li.icon {
+	float: right;
+	display: inline-block;
+	background-color: #e09457;
+}
+nav ul.burgermenu {
+	position: relative;
+}
+nav ul.burgermenu li.icon {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+nav ul.burgermenu li {
+    float: none;
+    display: inline;
+}
+nav ul.burgermenu li a {
+    display: block;
+    text-align: left;
+}
+
 nav {
 	background-color: #3a3a3a;
 	position: fixed;
@@ -38,7 +66,6 @@ nav {
     -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
 }
-
 
 nav ul li {
 	display: inline-flex;
@@ -54,19 +81,11 @@ nav ul li a:hover {
 	background-color: #e09457;
 }
 
-nav ul li:nth-last-child(2) { 
-	float:right; 
-	background-color: #e09457;
-}
 nav ul li:nth-last-child(2) a:hover { 
 	background-color: #3a3a3a;
 	color: #fafafa;
 }
-nav ul li.icon{ 
-	display: none;
-	transition: all 400ms ease;
-	background-color: #e09457;
-}
+
 
  /* ------ Header ------ */
 
@@ -82,7 +101,6 @@ nav ul li.icon{
 }
 
  header h1 {
-
  	color: #fff;
  	font-size: 25px;
  	margin-top: 25px;
@@ -118,8 +136,8 @@ nav ul li.icon{
 
 #features {
 	text-align: center;
-    padding: 0 15px;
-    float: left;
+    /*padding: 0 15px;
+    float: left;*/
 }
 #features article {
 	padding-bottom: 40px;
@@ -168,10 +186,11 @@ nav ul li.icon{
 /* ------ FOOTER ------ */
 footer {
 	color: #fafafa;
-    width: 100%;
-    float: left;
     background-color: #3a3a3a;
     margin-top: 60px;
+    width: 100%;
+    padding: 25px 0 0 0;
+    float: left;
 }
 
 
@@ -208,57 +227,68 @@ footer h5 {
 /* ------ MEDIA QUERIES ------ */
 
 
-/* Custom, iPhone Retina */ 
+/* Custom Phones */ 
     @media only screen and (min-width : 320px) {
-
+    	#features img {
+    		width: 18em;
+		}
+		footer [class ^= 'footer-']{
+			padding: 5px 35px;
+		}
         
     }
 
     /* Extra Small Devices, Phones */ 
     @media only screen and (min-width : 480px) {
 
+    	header {
+	    	height: 200px;
+		}
+
+    	#features img {
+    		width: 25em;
+		}
+		#features p {
+			margin: 0 auto;
+		    max-width: 80%;
+		    padding-bottom: 25px;
+		}
+
     }
 
     /* Small Devices, Tablets */
-    @media only screen and (min-width : 768px) {
+    @media only screen and (min-width : 650px) {
+    	header h1 {
+		    width: 60%;
+		    margin: 0 auto;
+		    padding-top: 25px;
+	    }
+	    #copy {
+	    	padding: 25px 0;
+	    	width: 70%;
+	    }
 
-    }
-    @media only screen and (max-width : 850px) {
+	/* ------ Major Breakpoint ------ */
+    @media only screen and (min-width : 850px) {
 
-    	/* ------ Burger Menu ------ */
-
+    	/* ------ REMOVE BURGER MENU ------ */
     	nav ul li:not(:first-child) {
-    		display: none;
-    	}
-  		nav ul li.icon {
-	    	float: right;
-	    	display: inline-block;
-  		}
-  		nav ul.burgermenu {
-  			position: relative;
-  		}
-  		nav ul.burgermenu li.icon {
-		    position: absolute;
-		    right: 0;
-		    top: 0;
-  		}
-		nav ul.burgermenu li {
-		    float: none;
-		    display: inline;
+    		display: inline-block;
 		}
-		nav ul.burgermenu li a {
-		    display: block;
-		    text-align: left;
+		nav ul li.icon{ 
+			display: none;
+			transition: all 400ms ease;
+			background-color: #e09457;
 		}
-		nav ul.burgermenu li a:hover {
-		    background-color: #e09457;
+		nav ul li:nth-last-child(2) { 
+			float:right; 
+			background-color: #e09457;
 		}
-
-    }
-   
-    /* Medium Devices, Desktops */
-    @media only screen and (min-width : 992px) {
-    	/* ------ FEATURES ------ */
+    	
+		#features img {
+		    width: 100%;
+		}
+		/* ------ FEATURES 3 COLUMN------ */
 
     	#features [class ^= 'column-'] {
 		    width: 33.3333%;
@@ -274,13 +304,13 @@ footer h5 {
 		    float: right;
 		}
 
-		/* ------ FOOTER ------ */
+		/* ------ FOOTER 3 COLUMN------ */
 
 		footer [class ^= 'footer-'] {
 		    width: 33.3333%;
 		    display: inline-block;
 		    float: left;
-		    padding-top: 45px;
+		    padding:0px;
 		}
 
 		footer .footer-left {
@@ -290,11 +320,44 @@ footer h5 {
 		footer .footer-right {
 		    float: right;
 		}
+		footer {
+		    padding: 35px;
+		    height: 300px;
+		    width: auto;
+		    float: none;
+		}
+
 
     }
-
-    /* Large Devices, Wide Screens */
-    @media only screen and (min-width : 1200px) {
-
-
+   
+    /* ------ Desktops and Wider screens------ */
+    @media only screen and (min-width : 992px) {
+    	header {
+		    height: 400px;
+		}
+		header h1 {
+			width: auto;
+		 	font-size: 45px;
+		 	margin-top: 60px;
+		 	padding:0 30% ;
+		 	text-align: center;
+		 	letter-spacing: 5px;
+		}
+		header img {
+		 	width: 300px;
+		}
+		#copy {
+			width: 60%;
+		}
+		#copy h3{
+			width: 60%;
+			margin: 0 auto;
+			padding: 25px 0;
+		}
+		#copy p{
+			padding: 15px 0;
+		}
+		#copy hr {
+			width: 5%;
+		}
     }
